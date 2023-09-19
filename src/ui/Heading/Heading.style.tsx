@@ -1,10 +1,5 @@
 import { styled, css } from 'styled-components';
 
-/**
-|--------------------------------------------------
-| STYLES
-|--------------------------------------------------
-*/
 const sizes = {
   sm: css`
     font-size: var(--fs-400);
@@ -59,23 +54,4 @@ const StyledHeading = styled.p<{ $size: 'sm' | 'md' | 'lg' | 'xl'; $color?: stri
   ${(props) => sizes[props.$size]}
 `;
 
-/**
-|--------------------------------------------------
-| STRUCTURE
-|--------------------------------------------------
-*/
-interface HeadingProps {
-  size: 'sm' | 'md' | 'lg' | 'xl';
-  color?: string;
-  children: string;
-}
-
-function Heading({ size, color, children, ...rest }: HeadingProps) {
-  return (
-    <StyledHeading $size={size} $color={color} {...rest}>
-      {children}
-    </StyledHeading>
-  );
-}
-
-export default Heading;
+export default StyledHeading;

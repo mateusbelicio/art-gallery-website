@@ -1,10 +1,5 @@
 import { styled, css } from 'styled-components';
 
-/**
-|--------------------------------------------------
-| STYLES
-|--------------------------------------------------
-*/
 const sizes = {
   small: css`
     font-size: var(--fs-100);
@@ -34,23 +29,4 @@ const StyledParagraph = styled.p<{ $size: 'small' | 'base'; $color?: string }>`
   ${({ $size }) => sizes[$size]}
 `;
 
-/**
-|--------------------------------------------------
-| STRUCTURE
-|--------------------------------------------------
-*/
-interface ParagraphProps {
-  size: 'small' | 'base';
-  color?: string;
-  children: string;
-}
-
-function Paragraph({ size, children, color, ...rest }: ParagraphProps) {
-  return (
-    <StyledParagraph $size={size} $color={color} {...rest}>
-      {children}
-    </StyledParagraph>
-  );
-}
-
-export default Paragraph;
+export default StyledParagraph;
