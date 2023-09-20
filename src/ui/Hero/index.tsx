@@ -1,6 +1,9 @@
+import { Link } from 'react-router-dom';
+
 import Section from '../Section';
 import Paragraph from '../Paragraph';
 import Heading from '../Heading';
+import Button from '../Button';
 
 import { HeroWrapper, HeroImage, HeroContent } from './Hero.style';
 
@@ -30,7 +33,9 @@ function Hero() {
                 inspiration. Will these pieces inspire you? Visit us and find out.
               </Paragraph>
 
-              <a href="/location">Our location</a>
+              <Button direction="right" as={Link} href="/location">
+                Our location
+              </Button>
             </div>
           </HeroContent>
         </HeroWrapper>

@@ -63,6 +63,7 @@ export const HeroContent = styled.div`
     flex-direction: column;
     gap: inherit;
     justify-content: start;
+    align-items: start;
   }
 
   @media (min-width: 40em) {
@@ -87,7 +88,7 @@ export const HeroContent = styled.div`
       right: 50%;
       width: 50%;
       height: 100%;
-      background-color: black;
+      background-color: var(--color-neutral-900);
       z-index: -20;
     }
 
@@ -95,6 +96,7 @@ export const HeroContent = styled.div`
       grid-column: span 6;
       mix-blend-mode: difference;
       color: var(--color-neutral-100);
+      white-space: nowrap;
     }
 
     & > div {
