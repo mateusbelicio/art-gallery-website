@@ -46,9 +46,14 @@ const sizes = {
   `,
 };
 
-const StyledHeading = styled.p<{ $size: 'sm' | 'md' | 'lg' | 'xl'; $color?: string }>`
+const StyledHeading = styled.p<{
+  $size: 'sm' | 'md' | 'lg' | 'xl';
+  $color?: string;
+  $transform?: 'uppercase' | 'capitalize' | 'lowercase' | 'none';
+}>`
   font-family: var(--ff-heading);
   font-weight: 900;
+  text-transform: ${({ $transform }) => $transform || 'none'};
 
   color: ${({ $color }) => ($color ? `var(--color-${$color})` : 'var(--color-neutral-900)')};
   ${(props) => sizes[props.$size]}

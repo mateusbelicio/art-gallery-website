@@ -16,4 +16,9 @@ export const Colors = css`
     --color-neutral-400: rgb(var(--rgb-neutral-400));
     --color-neutral-900: rgb(var(--rgb-neutral-900));
   }
+
+  ::selection {
+    background-color: rgb(var(--rgb-neutral-900) / 0.85);
+    color: var(--color-neutral-100);
+  }
 `;

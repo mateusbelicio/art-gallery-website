@@ -19,6 +19,7 @@ export const Reset = css`
   }
 
   body {
+    background-color: var(--color-neutral-100);
     min-height: 100vh;
     text-rendering: optimizeSpeed;
   }
