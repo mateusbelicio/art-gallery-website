@@ -9,7 +9,7 @@ export const HeroWrapper = styled(Section.Wrapper)`
   row-gap: 2rem;
 `;
 
-export const HeroImage = styled.picture`
+export const HeroImage = styled.div`
   height: ${`${HERO_IMAGE_MOBILE.maxHeight / 16}rem`};
   background-color: #fff;
 
