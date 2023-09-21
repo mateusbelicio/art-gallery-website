@@ -8,12 +8,13 @@ import Image from '../Image';
 
 import { HeroWrapper, HeroImage, HeroContent } from './Hero.style';
 
-import heroImageMobile from '@/assets/mobile/image-hero.jpg';
-import heroImageMobile2x from '@/assets/mobile/image-hero@2x.jpg';
-import heroImageTablet from '@/assets/tablet/image-hero.jpg';
-import heroImageTablet2x from '@/assets/tablet/image-hero@2x.jpg';
-import heroImageDesktop from '@/assets/desktop/image-hero.jpg';
-import heroImageDesktop2x from '@/assets/desktop/image-hero@2x.jpg';
+import heroImageFallback from '@/assets/mobile/image-hero.jpg';
+import heroImageMobile from '@/assets/mobile/image-hero.webp';
+import heroImageMobile2x from '@/assets/mobile/image-hero@2x.webp';
+import heroImageTablet from '@/assets/tablet/image-hero.webp';
+import heroImageTablet2x from '@/assets/tablet/image-hero@2x.webp';
+import heroImageDesktop from '@/assets/desktop/image-hero.webp';
+import heroImageDesktop2x from '@/assets/desktop/image-hero@2x.webp';
 
 function Hero() {
   return (
@@ -22,26 +23,26 @@ function Hero() {
         <HeroWrapper $grid>
           <HeroImage>
             <Image
-              srcFallback={heroImageMobile}
+              srcFallback={heroImageFallback}
               alt="Two people looking at a photograph of an old lady in an art gallery"
               srcSet={[
                 {
                   device: 'desktop',
                   src: heroImageDesktop,
                   srcDensity: heroImageDesktop2x,
-                  type: 'image/jpeg',
+                  type: 'image/webp',
                 },
                 {
                   device: 'tablet',
                   src: heroImageTablet,
                   srcDensity: heroImageTablet2x,
-                  type: 'image/jpeg',
+                  type: 'image/webp',
                 },
                 {
                   device: 'mobile',
                   src: heroImageMobile,
                   srcDensity: heroImageMobile2x,
-                  type: 'image/jpeg',
+                  type: 'image/webp',
                 },
               ]}
             />
