@@ -1,32 +1,40 @@
-import { ReactNode, useState } from 'react';
+import { HTMLAttributes, ReactNode, useState } from 'react';
 import { WebTarget } from 'styled-components';
 import { motion, Variants } from 'framer-motion';
 
 import Icon from '../Icon';
 import StyledButton from './Button.style';
 
-interface ButtonProps {
-  children: ReactNode;
+interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   direction: 'left' | 'right';
   as?: void | WebTarget | undefined;
   href?: string;
+  children?: ReactNode;
 }
 
-const variationLeftToRight: Variants = {
-  initialBlack: { backgroundPositionX: '100%' },
-  initialBrand: { backgroundPositionX: '50%' },
-  hoverBlack: { backgroundPositionX: '50%' },
-  hoverBrand: { backgroundPositionX: '0%' },
+// Variants
+const iconLeftToRigth: Variants = {
+  initial: { backgroundPositionX: '50%' },
+  hover: { backgroundPositionX: '0%' },
 };
 
-const variationRightToLeft: Variants = {
-  initialBlack: { backgroundPositionX: '0%' },
-  initialBrand: { backgroundPositionX: '50%' },
-  hoverBlack: { backgroundPositionX: '50%' },
-  hoverBrand: { backgroundPositionX: '100%' },
+const iconRightToLeft: Variants = {
+  initial: { backgroundPositionX: '50%' },
+  hover: { backgroundPositionX: '100%' },
 };
 
-function Button({ direction, as, href, children }: ButtonProps) {
+const textRightToLeft: Variants = {
+  initial: { backgroundPositionX: '0%' },
+  hover: { backgroundPositionX: '50%' },
+};
+
+const textLeftToRigth: Variants = {
+  initial: { backgroundPositionX: '100%' },
+  hover: { backgroundPositionX: '50%' },
+};
+
+// --------------------------------------------------
+function Button({ direction, as, href, children }: ButtonProps): ReactNode {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => setIsHovered(true);
@@ -36,39 +44,35 @@ function Button({ direction, as, href, children }: ButtonProps) {
 
   return (
     <StyledButton as={as} {...linkProps}>
-      <motion.span
-        className="wrapper"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
+      <span className="wrapper" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         {direction === 'left' && (
           <motion.span
             className="icon"
-            initial="initialBrand"
-            animate={isHovered ? 'hoverBrand' : 'initialBrand'}
-            variants={variationRightToLeft}
+            initial="initial"
+            animate={isHovered ? 'hover' : 'initial'}
+            variants={iconRightToLeft}
           >
             <Icon name="arrow-left" width={8} height={24} />
           </motion.span>
         )}
         <motion.span
-          initial="initialBlack"
-          animate={isHovered ? 'hoverBlack' : 'initialBlack'}
-          variants={direction === 'left' ? variationRightToLeft : variationLeftToRight}
+          initial="initial"
+          animate={isHovered ? 'hover' : 'initial'}
+          variants={direction === 'left' ? textRightToLeft : textLeftToRigth}
         >
           {children}
         </motion.span>
         {direction === 'right' && (
           <motion.span
             className="icon"
-            initial="initialBrand"
-            animate={isHovered ? 'hoverBrand' : 'initialBrand'}
-            variants={variationLeftToRight}
+            initial="initial"
+            animate={isHovered ? 'hover' : 'initial'}
+            variants={iconLeftToRigth}
           >
             <Icon name="arrow-right" width={8} height={24} />
           </motion.span>
         )}
-      </motion.span>
+      </span>
     </StyledButton>
   );
 }

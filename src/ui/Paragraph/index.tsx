@@ -7,10 +7,10 @@ interface ParagraphProps {
   size: 'small' | 'base';
   color?: string;
   as?: void | WebTarget | undefined;
-  children: string | ReactNode;
+  children?: ReactNode;
 }
 
-function Paragraph({ size, children, color, as, ...rest }: ParagraphProps) {
+function Paragraph({ size, children, color, as, ...rest }: ParagraphProps): ReactNode {
   return (
     <StyledParagraph as={as} $size={size} $color={color} {...rest}>
       {children}
