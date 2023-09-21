@@ -39,6 +39,7 @@ const StyledButton = styled.button`
       background-size: 333%;
       background-position-x: 0%;
       color: var(--color-neutral-100);
+      white-space: nowrap;
 
       &.icon {
         padding: 1.5rem;

@@ -12,6 +12,7 @@ const imageAnimate: Variants = {
     filter: 'blur(8px)',
     transition: {
       repeat: Infinity,
+      repeatType: 'mirror',
       duration: 2,
       ease: 'easeInOut',
     },

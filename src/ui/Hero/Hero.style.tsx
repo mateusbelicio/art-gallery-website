@@ -5,11 +5,11 @@ const HERO_IMAGE_MOBILE = { maxWidth: 'none', maxHeight: 240 };
 const HERO_IMAGE_TABLET = { maxWidth: 'none', maxHeight: 700 };
 const HERO_IMAGE_DESKTOP = { maxWidth: 540, maxHeight: 800 };
 
-export const HeroWrapper = styled(Section.Wrapper)`
+export const Wrapper = styled(Section.Wrapper)`
   row-gap: 2rem;
 `;
 
-export const HeroImage = styled.div`
+export const Image = styled.div`
   height: ${`${HERO_IMAGE_MOBILE.maxHeight / 16}rem`};
   background-color: #fff;
 
@@ -54,7 +54,7 @@ export const HeroImage = styled.div`
   }
 `;
 
-export const HeroContent = styled.div`
+export const Content = styled.div`
   display: grid;
   row-gap: 2rem;
 

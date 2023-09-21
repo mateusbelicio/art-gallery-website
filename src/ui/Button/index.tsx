@@ -1,11 +1,11 @@
-import { HTMLAttributes, ReactNode, useState } from 'react';
+import { ButtonHTMLAttributes, ReactNode, useState } from 'react';
 import { WebTarget } from 'styled-components';
 import { motion, Variants } from 'framer-motion';
 
 import Icon from '../Icon';
 import StyledButton from './Button.style';
 
-interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   direction: 'left' | 'right';
   as?: void | WebTarget | undefined;
   href?: string;

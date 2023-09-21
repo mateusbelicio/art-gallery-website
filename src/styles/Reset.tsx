@@ -22,6 +22,11 @@ export const Reset = css`
     background-color: var(--color-neutral-100);
     min-height: 100vh;
     text-rendering: optimizeSpeed;
+    overflow-x: hidden;
+  }
+
+  #root {
+    overflow-x: hidden;
   }
 
   a {
@@ -40,6 +45,18 @@ export const Reset = css`
   textarea,
   select {
     font: inherit;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
   }
 
   @media (prefers-reduced-motion: reduce) {

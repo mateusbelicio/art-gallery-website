@@ -6,7 +6,7 @@ import Heading from '../Heading';
 import Button from '../Button';
 import Image from '../Image';
 
-import { HeroWrapper, HeroImage, HeroContent } from './Hero.style';
+import * as Styles from './Hero.style';
 
 import heroImageFallback from '@/assets/mobile/image-hero.jpg';
 import heroImageMobile from '@/assets/mobile/image-hero.webp';
@@ -20,8 +20,8 @@ function Hero() {
   return (
     <Section paddingBlock={0}>
       <Section.Container>
-        <HeroWrapper $grid>
-          <HeroImage>
+        <Styles.Wrapper $grid>
+          <Styles.Image>
             <Image
               srcFallback={heroImageFallback}
               alt="Two people looking at a photograph of an old lady in an art gallery"
@@ -46,9 +46,9 @@ function Hero() {
                 },
               ]}
             />
-          </HeroImage>
+          </Styles.Image>
 
-          <HeroContent>
+          <Styles.Content>
             <Heading as="h1" size="xl" transform="uppercase">
               Modern <br /> Art Gallery
             </Heading>
@@ -63,8 +63,8 @@ function Hero() {
                 Our location
               </Button>
             </div>
-          </HeroContent>
-        </HeroWrapper>
+          </Styles.Content>
+        </Styles.Wrapper>
       </Section.Container>
     </Section>
   );
