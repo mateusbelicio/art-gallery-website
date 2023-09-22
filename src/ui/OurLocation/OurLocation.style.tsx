@@ -36,5 +36,10 @@ export const Address = styled.address`
 
   @media (min-width: 40em) {
     grid-column: 7 / full-end;
+    gap: 1.5rem;
+
+    & > :last-child {
+      margin-top: 0.5rem;
+    }
   }
 `;
