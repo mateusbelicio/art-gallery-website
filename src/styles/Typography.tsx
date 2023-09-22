@@ -6,7 +6,7 @@ export const Typography = css`
     --ff-body: 'Outfit', sans-serif;
 
     --fs-100: 1rem; /* 16px */
-    --fs-200: 1.25rem; /* 18px */
+    --fs-200: 1.125rem; /* 18px */
     --fs-300: 1.375rem; /* 22px */
     --fs-400: 2rem; /* 32px */
     --fs-500: 2.25rem; /* 36px */
