@@ -8,15 +8,23 @@ interface SectionProps {
   paddingBlock: Padding;
   paddingBlockMedia?: { tablet?: Padding; desktop?: Padding };
   color?: string;
+  backgroundColor?: string;
   children?: ReactNode;
 }
 
-function Section({ paddingBlock, paddingBlockMedia, color, children }: SectionProps): ReactNode {
+function Section({
+  paddingBlock,
+  paddingBlockMedia,
+  color,
+  backgroundColor,
+  children,
+}: SectionProps): ReactNode {
   return (
     <StyledSection
       $paddingBlock={paddingBlock}
       $paddingBlockMedia={paddingBlockMedia}
       $color={color}
+      $backgroundColor={backgroundColor}
     >
       {children}
     </StyledSection>

@@ -5,6 +5,7 @@ interface SectionProps {
   $paddingBlock: Padding;
   $paddingBlockMedia?: { tablet?: Padding; desktop?: Padding };
   $color?: string;
+  $backgroundColor?: string;
 }
 
 const StyledSection = styled.section<SectionProps>`
@@ -14,7 +15,12 @@ const StyledSection = styled.section<SectionProps>`
   ${({ $color }) =>
     $color &&
     css`
-      background-color: ${`var(--color-${$color})`};
+      color: ${`var(--color-${$color})`};
+    `};
+  ${({ $backgroundColor }) =>
+    $backgroundColor &&
+    css`
+      background-color: ${`var(--color-${$backgroundColor})`};
     `};
 
   padding-block: ${({ $paddingBlock }) => {
@@ -41,6 +47,10 @@ const StyledSection = styled.section<SectionProps>`
           }};
         }
       `;
+  }}
+
+  ${({ $paddingBlockMedia }) => {
+    if (!$paddingBlockMedia) return;
 
     if ($paddingBlockMedia.desktop)
       return css`
