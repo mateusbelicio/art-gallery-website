@@ -96,6 +96,7 @@ export const Wrapper = styled.div<{ $grid?: boolean }>`
     $grid &&
     css`
       display: grid;
+      grid-template-columns: [full-start] 1fr [full-end];
 
       & > * {
         grid-column: full;
