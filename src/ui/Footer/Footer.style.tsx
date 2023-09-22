@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
 export const Footer = styled.footer<{ $colorDark: boolean }>`
@@ -51,8 +52,13 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Logo = styled.a`
+export const Logo = styled(Link)`
   flex-shrink: 0;
+
+  &:focus-visible {
+    outline: 3px solid var(--color-hover);
+    outline-offset: 3px;
+  }
 
   @media (min-width: 60em) {
     img {

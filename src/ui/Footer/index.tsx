@@ -23,7 +23,7 @@ function Footer({ colorDark = false }: FooterProps) {
         <Section.Container>
           <Styles.Wrapper>
             <Styles.Content>
-              <Styles.Logo href="#">
+              <Styles.Logo to="/#">
                 <img src={logo} alt="Art Gallery logo" />
               </Styles.Logo>
 
