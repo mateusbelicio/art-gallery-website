@@ -13,6 +13,7 @@ export const ButtonWrapper = styled.div`
   justify-self: start;
   position: absolute;
   left: 0;
+  z-index: 50;
 
   @media (min-width: 40em) {
     left: initial;
