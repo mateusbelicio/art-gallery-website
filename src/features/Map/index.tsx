@@ -13,7 +13,7 @@ function Map(): React.JSX.Element {
 
   useEffect(() => {
     changeMapPosition(41.481378, -71.3103165);
-    changeMapZoom(14);
+    changeMapZoom(14.5);
     changeMapStyle('mapbox://styles/mateusbelicio/clmw89i2q05nv01ma5s699qpx');
   }, []);
 

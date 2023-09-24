@@ -1,4 +1,5 @@
-import React, { createContext, useReducer } from 'react';
+import React, { createContext, useReducer, useRef } from 'react';
+import { Map } from 'mapbox-gl';
 
 interface MapProps {
   children?: React.ReactNode;
@@ -38,6 +39,7 @@ function reducer(state: MapState, action: MapAction) {
 }
 
 interface IMapContext extends MapState {
+  map: React.MutableRefObject<Map | null>;
   changeMapPosition: (lat: number, lng: number) => void;
   changeMapZoom: (style: number) => void;
   changeMapStyle: (zoom: string) => void;
@@ -51,6 +53,8 @@ export function MapProvider({ children }: MapProps) {
     style: 'mapbox://styles/mapbox/streets-v12',
     zoom: 5,
   });
+
+  const map = useRef<Map | null>(null);
 
   const changeMapPosition = (lat: number, lng: number) => {
     dispatch({ type: MapActionKind.CHANGE_POSITION, payload: { lat, lng } });
@@ -66,7 +70,7 @@ export function MapProvider({ children }: MapProps) {
 
   return (
     <MapContext.Provider
-      value={{ position, changeMapPosition, zoom, changeMapZoom, style, changeMapStyle }}
+      value={{ map, position, changeMapPosition, zoom, changeMapZoom, style, changeMapStyle }}
     >
       {children}
     </MapContext.Provider>

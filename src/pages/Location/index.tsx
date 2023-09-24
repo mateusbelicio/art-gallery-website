@@ -1,5 +1,6 @@
-import Map from '@/features/Map';
 import { MapProvider } from '@/features/Map/MapContext';
+
+import Map from '@/features/Map';
 import Footer from '@/ui/Footer';
 import OurLocation from '@/ui/OurLocation';
 

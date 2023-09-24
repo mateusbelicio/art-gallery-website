@@ -1,12 +1,34 @@
 import styled from 'styled-components';
 
-export const MapContainer = styled.div`
+export const MapBox = styled.div`
+  display: grid;
   height: 34.375rem;
   background-color: var(--color-neutral-400);
 
   @media (min-width: 40em) {
     height: 37.5rem;
   }
+`;
+
+export const MapContainer = styled.div<{ $isLoading: boolean }>`
+  height: 100%;
+  width: 100%;
+  visibility: ${({ $isLoading }) => ($isLoading ? 'hidden' : 'visible')};
+
+  grid-column: 1;
+  grid-row: 1;
+`;
+
+export const MapStatic = styled.div<{ $url: string }>`
+  background-image: url(${({ $url }) => $url});
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+
+  grid-column: 1;
+  grid-row: 1;
 `;
 
 export const ButtonWrapper = styled.div`
