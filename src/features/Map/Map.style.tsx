@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const MapBox = styled.div`
   display: grid;
   height: 34.375rem;
-  background-color: var(--color-neutral-400);
+  background-color: var(--color-neutral-300);
 
   @media (min-width: 40em) {
     height: 37.5rem;
@@ -22,7 +22,6 @@ export const MapContainer = styled.div<{ $isLoading: boolean }>`
 export const MapStatic = styled.div<{ $url: string }>`
   background-image: url(${({ $url }) => $url});
   background-position: center;
-  background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
   width: 100%;
