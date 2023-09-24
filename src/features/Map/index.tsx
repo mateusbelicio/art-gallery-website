@@ -11,10 +11,15 @@ import { useMap } from './useMap';
 function Map(): React.JSX.Element {
   const { changeMapPosition, changeMapStyle, changeMapZoom } = useMap();
 
+  const username = import.meta.env.VITE_MAPBOX_USERNAME;
+  const styleId = import.meta.env.VITE_MAPBOX_STYLE_ID;
+
+  const mapStyleURL = `mapbox://styles/${username}/${styleId}`;
+
   useEffect(() => {
     changeMapPosition(41.481378, -71.3103165);
     changeMapZoom(14.5);
-    changeMapStyle('mapbox://styles/mateusbelicio/clmw89i2q05nv01ma5s699qpx');
+    changeMapStyle(mapStyleURL);
   }, []);
 
   return (

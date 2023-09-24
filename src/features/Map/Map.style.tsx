@@ -4,6 +4,7 @@ export const MapBox = styled.div`
   display: grid;
   height: 34.375rem;
   background-color: var(--color-neutral-300);
+  overflow: hidden;
 
   @media (min-width: 40em) {
     height: 37.5rem;

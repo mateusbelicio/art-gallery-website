@@ -1,26 +1,11 @@
-import React, { createContext, useReducer, useRef } from 'react';
-import { Map } from 'mapbox-gl';
+import { createContext, useReducer, useRef, useEffect, useState } from 'react';
+import { createRoot } from 'react-dom/client';
+import { Map, Marker, Popup } from 'mapbox-gl';
 
-interface MapProps {
-  children?: React.ReactNode;
-}
+import { IMapContext, MapAction, MapActionKind, MapProps, MapState } from './Map.types';
+import Icon from '@/ui/Icon';
 
-enum MapActionKind {
-  CHANGE_POSITION = 'map/changePosition',
-  CHANGE_STYLE = 'map/changeStyle',
-  CHANGE_ZOOM = 'map/changeZoom',
-}
-
-interface MapState {
-  position: { lat: number; lng: number };
-  style: string;
-  zoom: number;
-}
-
-interface MapAction {
-  type: MapActionKind;
-  payload: string | number | { lat: number; lng: number };
-}
+export const MapContext = createContext<IMapContext | null>(null);
 
 function reducer(state: MapState, action: MapAction) {
   switch (action.type) {
@@ -38,16 +23,8 @@ function reducer(state: MapState, action: MapAction) {
   }
 }
 
-interface IMapContext extends MapState {
-  map: React.MutableRefObject<Map | null>;
-  changeMapPosition: (lat: number, lng: number) => void;
-  changeMapZoom: (style: number) => void;
-  changeMapStyle: (zoom: string) => void;
-}
-
-export const MapContext = createContext<IMapContext | null>(null);
-
 export function MapProvider({ children }: MapProps) {
+  const [mapIsLoading, setMapIsLoading] = useState(false);
   const [{ position, style, zoom }, dispatch] = useReducer(reducer, {
     position: { lat: 0, lng: 0 },
     style: 'mapbox://styles/mapbox/streets-v12',
@@ -55,6 +32,51 @@ export function MapProvider({ children }: MapProps) {
   });
 
   const map = useRef<Map | null>(null);
+  const mapContainer = useRef<HTMLDivElement | null>(null);
+  const markerElement = useRef<HTMLElement | null>(null);
+  const marker = useRef<Marker | null>(null);
+  const popup = useRef<Popup | null>(null);
+
+  useEffect(() => {
+    map.current = new Map({
+      attributionControl: false,
+      bearingSnap: 180,
+      center: [position.lng, position.lat],
+      container: mapContainer.current || 'map-container',
+      logoPosition: 'bottom-left',
+      maxZoom: 17,
+      minZoom: 12,
+      pitchWithRotate: false,
+      renderWorldCopies: false,
+      style,
+      zoom,
+    });
+
+    markerElement.current = document.createElement('div');
+    createRoot(markerElement.current).render(<Icon name="location" width={44} height={66} />);
+
+    popup.current = new Popup({ anchor: 'bottom', offset: 52 }).setHTML(`
+      <h4>Art gallery</h4>
+      <p>99 King Street</p>
+      <p>Newport RI 02840 - USA</p>
+    `);
+
+    marker.current = new Marker({
+      anchor: 'bottom',
+      color: '#151515',
+      element: markerElement.current,
+    })
+      .setLngLat([position.lng, position.lat])
+      .addTo(map.current)
+      .setPopup(popup.current || '');
+  }, [position.lng, position.lat, zoom, style, map, markerElement, popup, marker, mapContainer]);
+
+  useEffect(() => {
+    if (!map.current) return;
+
+    setMapIsLoading(true);
+    map.current.on('load', () => setMapIsLoading(false));
+  }, [map]);
 
   const changeMapPosition = (lat: number, lng: number) => {
     dispatch({ type: MapActionKind.CHANGE_POSITION, payload: { lat, lng } });
@@ -70,7 +92,20 @@ export function MapProvider({ children }: MapProps) {
 
   return (
     <MapContext.Provider
-      value={{ map, position, changeMapPosition, zoom, changeMapZoom, style, changeMapStyle }}
+      value={{
+        map,
+        mapContainer,
+        mapIsLoading,
+        position,
+        changeMapPosition,
+        zoom,
+        changeMapZoom,
+        style,
+        changeMapStyle,
+        markerElement,
+        marker,
+        popup,
+      }}
     >
       {children}
     </MapContext.Provider>
