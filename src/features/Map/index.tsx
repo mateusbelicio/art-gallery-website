@@ -23,7 +23,7 @@ function Map(): React.JSX.Element {
   }, []);
 
   return (
-    <Section paddingBlock={0}>
+    <Section paddingBlock={0} overflow="hidden">
       <Section.Container>
         <Section.Wrapper $grid={true}>
           <Styles.ButtonWrapper>

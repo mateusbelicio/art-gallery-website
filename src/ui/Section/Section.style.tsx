@@ -5,6 +5,7 @@ interface SectionProps {
   $paddingBlock: Padding;
   $paddingBlockMedia?: { tablet?: Padding; desktop?: Padding };
   $color?: string;
+  $overflow?: 'hidden' | 'scroll' | 'visible';
   $backgroundColor?: string;
 }
 
@@ -21,6 +22,11 @@ const StyledSection = styled.section<SectionProps>`
     $backgroundColor &&
     css`
       background-color: ${`var(--color-${$backgroundColor})`};
+    `};
+  ${({ $overflow }) =>
+    $overflow &&
+    css`
+      overflow: ${$overflow};
     `};
 
   padding-block: ${({ $paddingBlock }) => {
