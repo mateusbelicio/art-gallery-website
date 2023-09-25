@@ -39,7 +39,7 @@ export const IconAnimated = styled.div`
   background-size: 50.1% 50.1%;
   background-repeat: no-repeat;
   position: relative;
-  animation: ${l7_0} 3s infinite steps(1);
+  animation: ${l7_0} 1s infinite steps(1);
 
   &::before,
   &::after {
@@ -49,7 +49,7 @@ export const IconAnimated = styled.div`
     background: currentColor;
     transform: scale(var(--scale, 1)) perspective(9.375rem) rotateY(0deg);
     transform-origin: bottom right;
-    animation: ${l7_1} 1.5s infinite linear alternate;
+    animation: ${l7_1} 0.5s infinite linear alternate;
   }
 
   &::after {

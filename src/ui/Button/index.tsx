@@ -10,6 +10,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   as?: void | WebTarget | undefined;
   href?: string;
   children?: ReactNode;
+  rest?: ButtonHTMLAttributes<HTMLButtonElement>;
 }
 
 // Variants
@@ -34,7 +35,7 @@ const textLeftToRigth: Variants = {
 };
 
 // --------------------------------------------------
-function Button({ direction, as, href, children }: ButtonProps): ReactNode {
+function Button({ direction, as, href, children, ...rest }: ButtonProps): ReactNode {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => setIsHovered(true);
@@ -43,7 +44,7 @@ function Button({ direction, as, href, children }: ButtonProps): ReactNode {
   const linkProps: object = as ? { to: href } : {};
 
   return (
-    <StyledButton as={as} {...linkProps}>
+    <StyledButton as={as} {...linkProps} {...rest}>
       <span className="wrapper" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         {direction === 'left' && (
           <motion.span
