@@ -6,8 +6,12 @@ export const Article = styled.article<{ $black?: boolean }>`
       ? css`
           background-color: var(--color-neutral-900);
           color: var(--color-neutral-100);
-
           padding: 3rem 1.5rem;
+
+          ::selection {
+            background-color: var(--color-brand-400);
+            color: var(--color-neutral-900);
+          }
 
           @media (min-width: 40em) {
             padding: 1.5rem 1.75rem;

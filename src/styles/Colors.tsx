@@ -5,7 +5,7 @@ export const Colors = css`
     --rgb-brand-400: 213 150 108;
 
     --rgb-neutral-100: 255 255 255;
-    --rgb-neutral-300: 124 124 124;
+    --rgb-neutral-300: 120 120 120;
     --rgb-neutral-400: 68 68 68;
     --rgb-neutral-900: 21 21 21;
   }
