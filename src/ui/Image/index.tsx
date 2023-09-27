@@ -19,7 +19,7 @@ const imageAnimate: Variants = {
   },
 };
 
-function Image({ srcSet, srcFallback, alt }: ImageProps) {
+function Image({ srcSet, srcFallback, alt, lazy = true }: ImageProps) {
   const [loaded, setLoaded] = useState<boolean>(false);
   const imageRef = useRef<HTMLImageElement>(null);
   const currentImage = useRef<string>(srcFallback);
@@ -59,7 +59,7 @@ function Image({ srcSet, srcFallback, alt }: ImageProps) {
         src={srcFallback}
         alt={alt}
         onLoad={handleLoad}
-        loading="lazy"
+        loading={lazy ? 'lazy' : 'eager'}
         variants={imageAnimate}
         initial="idle"
         animate={loaded ? 'idle' : 'loading'}

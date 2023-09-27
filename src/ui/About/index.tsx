@@ -5,6 +5,24 @@ import Section from '../Section';
 
 import * as Styles from './About.style';
 
+import mobileImageGrid_1_JPG from '@/assets/mobile/image-grid-1.jpg';
+import mobileImageGrid_1_WEBP from '@/assets/mobile/image-grid-1.webp';
+import mobileImageGrid_1_2xWEBP from '@/assets/mobile/image-grid-1@2x.webp';
+import desktopImageGrid_1_WEBP from '@/assets/desktop/image-grid-1.webp';
+import desktopImageGrid_1_2xWEBP from '@/assets/desktop/image-grid-1@2x.webp';
+
+import mobileImageGrid_2_JPG from '@/assets/mobile/image-grid-2.jpg';
+import mobileImageGrid_2_WEBP from '@/assets/mobile/image-grid-2.webp';
+import mobileImageGrid_2_2xWEBP from '@/assets/mobile/image-grid-2@2x.webp';
+import desktopImageGrid_2_WEBP from '@/assets/desktop/image-grid-2.webp';
+import desktopImageGrid_2_2xWEBP from '@/assets/desktop/image-grid-2@2x.webp';
+
+import mobileImageGrid_3_JPG from '@/assets/mobile/image-grid-3.jpg';
+import mobileImageGrid_3_WEBP from '@/assets/mobile/image-grid-3.webp';
+import mobileImageGrid_3_2xWEBP from '@/assets/mobile/image-grid-3@2x.webp';
+import desktopImageGrid_3_WEBP from '@/assets/desktop/image-grid-3.webp';
+import desktopImageGrid_3_2xWEBP from '@/assets/desktop/image-grid-3@2x.webp';
+
 function About() {
   return (
     <Section paddingBlock={120} paddingBlockMedia={{ desktop: 180 }}>
@@ -16,20 +34,20 @@ function About() {
 
           <Styles.Grid>
             <Image
-              srcFallback="/src/assets/mobile/image-grid-1.jpg"
+              srcFallback={mobileImageGrid_1_JPG}
               alt="Art gallery image 1"
               srcSet={[
                 {
                   device: 'tablet',
                   type: 'image/webp',
-                  src: '/src/assets/desktop/image-grid-1.webp',
-                  srcDensity: '/src/assets/desktop/image-grid-1@2x.webp',
+                  src: desktopImageGrid_1_WEBP,
+                  srcDensity: desktopImageGrid_1_2xWEBP,
                 },
                 {
                   device: 'mobile',
                   type: 'image/webp',
-                  src: '/src/assets/mobile/image-grid-1.webp',
-                  srcDensity: '/src/assets/mobile/image-grid-1@2x.webp',
+                  src: mobileImageGrid_1_WEBP,
+                  srcDensity: mobileImageGrid_1_2xWEBP,
                 },
               ]}
             />
@@ -46,39 +64,39 @@ function About() {
             </Styles.Article>
 
             <Image
-              srcFallback="/src/assets/mobile/image-grid-2.jpg"
+              srcFallback={mobileImageGrid_2_JPG}
               alt="Art gallery image 2"
               srcSet={[
                 {
                   device: 'tablet',
                   type: 'image/webp',
-                  src: '/src/assets/desktop/image-grid-2.webp',
-                  srcDensity: '/src/assets/desktop/image-grid-2@2x.webp',
+                  src: desktopImageGrid_2_WEBP,
+                  srcDensity: desktopImageGrid_2_2xWEBP,
                 },
                 {
                   device: 'mobile',
                   type: 'image/webp',
-                  src: '/src/assets/mobile/image-grid-2.webp',
-                  srcDensity: '/src/assets/mobile/image-grid-2@2x.webp',
+                  src: mobileImageGrid_2_WEBP,
+                  srcDensity: mobileImageGrid_2_2xWEBP,
                 },
               ]}
             />
 
             <Image
-              srcFallback="/src/assets/mobile/image-grid-3.jpg"
+              srcFallback={mobileImageGrid_3_JPG}
               alt="Art gallery image 3"
               srcSet={[
                 {
                   device: 'tablet',
                   type: 'image/webp',
-                  src: '/src/assets/desktop/image-grid-3.webp',
-                  srcDensity: '/src/assets/desktop/image-grid-3@2x.webp',
+                  src: desktopImageGrid_3_WEBP,
+                  srcDensity: desktopImageGrid_3_2xWEBP,
                 },
                 {
                   device: 'mobile',
                   type: 'image/webp',
-                  src: '/src/assets/mobile/image-grid-3.webp',
-                  srcDensity: '/src/assets/mobile/image-grid-3@2x.webp',
+                  src: mobileImageGrid_3_WEBP,
+                  srcDensity: mobileImageGrid_3_2xWEBP,
                 },
               ]}
             />

@@ -18,4 +18,5 @@ export interface ImageProps extends HTMLAttributes<HTMLImageElement> {
   }[];
   alt: string;
   srcFallback: string;
+  lazy?: boolean;
 }

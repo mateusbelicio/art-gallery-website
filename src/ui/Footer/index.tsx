@@ -5,12 +5,16 @@ import Social from '../Social';
 
 import * as Styles from './Footer.style';
 
+import logoLight from '@/assets/logo-light.svg';
+import logoDark from '@/assets/logo-dark.svg';
+import Heading from '../Heading';
+
 interface FooterProps {
   colorDark?: boolean;
 }
 
 function Footer({ colorDark = false }: FooterProps) {
-  const logo = colorDark ? '/src/assets/logo-light.svg' : '/src/assets/logo-dark.svg';
+  const logo = colorDark ? logoLight : logoDark;
 
   return (
     <Styles.Footer $colorDark={colorDark}>
@@ -23,6 +27,9 @@ function Footer({ colorDark = false }: FooterProps) {
         <Section.Container>
           <Styles.Wrapper>
             <Styles.Content>
+              <Heading as="h4" size="md" className="sr-only">
+                Footer
+              </Heading>
               <Styles.Logo to="/#">
                 <img src={logo} alt="Art Gallery logo" />
               </Styles.Logo>

@@ -8,13 +8,13 @@ import Image from '../Image';
 
 import * as Styles from './Hero.style';
 
-import heroImageFallback from '@/assets/mobile/image-hero.jpg';
-import heroImageMobile from '@/assets/mobile/image-hero.webp';
-import heroImageMobile2x from '@/assets/mobile/image-hero@2x.webp';
-import heroImageTablet from '@/assets/tablet/image-hero.webp';
-import heroImageTablet2x from '@/assets/tablet/image-hero@2x.webp';
-import heroImageDesktop from '@/assets/desktop/image-hero.webp';
-import heroImageDesktop2x from '@/assets/desktop/image-hero@2x.webp';
+import mobileImageHeroJPG from '@/assets/mobile/image-hero.jpg';
+import desktopImageHeroWEBP from '@/assets/desktop/image-hero.webp';
+import desktopImageHero2xWEBP from '@/assets/desktop/image-hero@2x.webp';
+import tabletImageHeroWEBP from '@/assets/tablet/image-hero.webp';
+import tabletImageHero2xWEBP from '@/assets/tablet/image-hero@2x.webp';
+import mobileImageHeroWEBP from '@/assets/mobile/image-hero.webp';
+import mobileImageHero2xWEBP from '@/assets/mobile/image-hero@2x.webp';
 
 function Hero() {
   return (
@@ -23,31 +23,31 @@ function Hero() {
         <Styles.Wrapper $grid>
           <Styles.Image>
             <Image
-              srcFallback={heroImageFallback}
+              srcFallback={mobileImageHeroJPG}
               alt="Two people looking at a photograph of an old lady in an art gallery"
+              lazy={false}
               srcSet={[
                 {
                   device: 'desktop',
-                  src: heroImageDesktop,
-                  srcDensity: heroImageDesktop2x,
+                  src: desktopImageHeroWEBP,
+                  srcDensity: desktopImageHero2xWEBP,
                   type: 'image/webp',
                 },
                 {
                   device: 'tablet',
-                  src: heroImageTablet,
-                  srcDensity: heroImageTablet2x,
+                  src: tabletImageHeroWEBP,
+                  srcDensity: tabletImageHero2xWEBP,
                   type: 'image/webp',
                 },
                 {
                   device: 'mobile',
-                  src: heroImageMobile,
-                  srcDensity: heroImageMobile2x,
+                  src: mobileImageHeroWEBP,
+                  srcDensity: mobileImageHero2xWEBP,
                   type: 'image/webp',
                 },
               ]}
             />
           </Styles.Image>
-
           <Styles.Content>
             <Heading as="h1" size="xl" transform="uppercase">
               Modern <br /> Art Gallery
