@@ -14,7 +14,11 @@ export const Article = styled.article<{ $black?: boolean }>`
           }
 
           @media (min-width: 40em) {
-            padding: 1.5rem 1.75rem;
+            padding: 2rem 1.75rem;
+          }
+
+          @media (min-width: 60em) {
+            padding: 3rem;
           }
         `
       : css`
@@ -84,10 +88,6 @@ export const Grid = styled.div`
   }
 
   @media (min-width: 60em) {
-    /* grid-template-rows:
-      minmax(min-content, 25rem)
-      minmax(min-content, 20rem)
-      minmax(min-content, 25rem); */
     row-gap: 1.875rem;
 
     & > :nth-child(1) {

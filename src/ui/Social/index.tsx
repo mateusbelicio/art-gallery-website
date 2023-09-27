@@ -11,6 +11,7 @@ function Social(): React.JSX.Element {
           href="https://www.facebook.com/"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Link to facebook"
         >
           <Icon name="facebook" width={20} height={20} />
         </Styles.SocialLink>
@@ -20,12 +21,18 @@ function Social(): React.JSX.Element {
           href="https://www.instagram.com/"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Link to instagram"
         >
           <Icon name="instagram" width={20} height={20} />
         </Styles.SocialLink>
       </li>
       <li>
-        <Styles.SocialLink href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
+        <Styles.SocialLink
+          href="https://twitter.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Link to twitter"
+        >
           <Icon name="twitter" width={20} height={20} />
         </Styles.SocialLink>
       </li>

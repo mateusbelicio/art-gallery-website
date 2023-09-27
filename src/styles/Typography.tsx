@@ -2,7 +2,7 @@ import { css } from 'styled-components';
 
 export const Typography = css`
   :root {
-    --ff-heading: 'Big Shoulders Display', cursive;
+    --ff-heading: 'Big Shoulders Display', sans-serif;
     --ff-body: 'Outfit', sans-serif;
 
     --fs-100: 1rem; /* 16px */
