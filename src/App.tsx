@@ -1,21 +1,28 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
 
-import Home from '@/pages/Home';
-import PageNotFound from '@/pages/PageNotFound';
-import Location from '@/pages/Location';
+const Home = lazy(() => import('@/pages/Home'));
+const PageNotFound = lazy(() => import('@/pages/PageNotFound'));
+const Location = lazy(() => import('@/pages/Location'));
 
 import GlobalStyles from '@/styles/GlobalStyles.tsx';
+import Loader from './ui/Loader';
 
-const router = createBrowserRouter([
-  { path: '/', element: <Home />, errorElement: <PageNotFound /> },
-  { path: '/location', element: <Location /> },
-]);
+const router = createBrowserRouter(
+  [
+    { path: '/', element: <Home />, errorElement: <PageNotFound /> },
+    { path: '/location', element: <Location /> },
+  ],
+  { basename: '/art-gallery-website/' }
+);
 
 function App() {
   return (
     <>
       <GlobalStyles />
-      <RouterProvider router={router} />
+      <Suspense fallback={<Loader full={true} />}>
+        <RouterProvider router={router} />
+      </Suspense>
     </>
   );
 }
