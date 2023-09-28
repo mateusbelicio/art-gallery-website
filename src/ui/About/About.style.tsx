@@ -65,9 +65,10 @@ export const Grid = styled.div`
       minmax(min-content, 23.5625rem);
     row-gap: 0.625rem;
 
-    & > article {
+    article {
       display: grid;
       place-content: center;
+      height: 100%;
     }
 
     & > :nth-child(1) {

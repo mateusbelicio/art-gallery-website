@@ -10,8 +10,14 @@ import Loader from './ui/Loader';
 
 const router = createBrowserRouter(
   [
-    { path: '/', element: <Home />, errorElement: <PageNotFound /> },
-    { path: '/location', element: <Location /> },
+    {
+      path: '/',
+      errorElement: <PageNotFound />,
+      children: [
+        { path: '', element: <Home /> },
+        { path: 'location', element: <Location /> },
+      ],
+    },
   ],
   { basename: '/art-gallery-website/' }
 );
