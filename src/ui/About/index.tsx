@@ -22,97 +22,110 @@ import mobileImageGrid_3_WEBP from '@/assets/mobile/image-grid-3.webp';
 import mobileImageGrid_3_2xWEBP from '@/assets/mobile/image-grid-3@2x.webp';
 import desktopImageGrid_3_WEBP from '@/assets/desktop/image-grid-3.webp';
 import desktopImageGrid_3_2xWEBP from '@/assets/desktop/image-grid-3@2x.webp';
+import Reveal from '../Reveal';
 
 function About() {
   return (
     <Section paddingBlock={120} paddingBlockMedia={{ desktop: 180 }}>
       <Section.Container>
-        <Section.Wrapper $grid>
-          <Heading as="h2" size="lg" className="sr-only">
-            About
-          </Heading>
+        <Reveal>
+          <Section.Wrapper $grid>
+            <Heading as="h2" size="lg" className="sr-only">
+              About
+            </Heading>
 
-          <Styles.Grid>
-            <Image
-              srcFallback={mobileImageGrid_1_JPG}
-              alt="Art gallery image 1"
-              srcSet={[
-                {
-                  device: 'tablet',
-                  type: 'image/webp',
-                  src: desktopImageGrid_1_WEBP,
-                  srcDensity: desktopImageGrid_1_2xWEBP,
-                },
-                {
-                  device: 'mobile',
-                  type: 'image/webp',
-                  src: mobileImageGrid_1_WEBP,
-                  srcDensity: mobileImageGrid_1_2xWEBP,
-                },
-              ]}
-            />
+            <Styles.Grid>
+              <Reveal.Child>
+                <Image
+                  srcFallback={mobileImageGrid_1_JPG}
+                  alt="Art gallery image 1"
+                  srcSet={[
+                    {
+                      device: 'tablet',
+                      type: 'image/webp',
+                      src: desktopImageGrid_1_WEBP,
+                      srcDensity: desktopImageGrid_1_2xWEBP,
+                    },
+                    {
+                      device: 'mobile',
+                      type: 'image/webp',
+                      src: mobileImageGrid_1_WEBP,
+                      srcDensity: mobileImageGrid_1_2xWEBP,
+                    },
+                  ]}
+                />
+              </Reveal.Child>
 
-            <Styles.Article>
-              <Heading as="h3" size="md" transform="uppercase">
-                Your day at the gallery
-              </Heading>
+              <Reveal.Child>
+                <Styles.Article>
+                  <Heading as="h3" size="md" transform="uppercase">
+                    Your day at the gallery
+                  </Heading>
 
-              <Paragraph size="base">
-                Wander through our distinct collections and find new insights about our artists.
-                Dive into the details of their creative process.
-              </Paragraph>
-            </Styles.Article>
+                  <Paragraph size="base">
+                    Wander through our distinct collections and find new insights about our artists.
+                    Dive into the details of their creative process.
+                  </Paragraph>
+                </Styles.Article>
+              </Reveal.Child>
 
-            <Image
-              srcFallback={mobileImageGrid_2_JPG}
-              alt="Art gallery image 2"
-              srcSet={[
-                {
-                  device: 'tablet',
-                  type: 'image/webp',
-                  src: desktopImageGrid_2_WEBP,
-                  srcDensity: desktopImageGrid_2_2xWEBP,
-                },
-                {
-                  device: 'mobile',
-                  type: 'image/webp',
-                  src: mobileImageGrid_2_WEBP,
-                  srcDensity: mobileImageGrid_2_2xWEBP,
-                },
-              ]}
-            />
+              <Reveal.Child>
+                <Image
+                  srcFallback={mobileImageGrid_2_JPG}
+                  alt="Art gallery image 2"
+                  srcSet={[
+                    {
+                      device: 'tablet',
+                      type: 'image/webp',
+                      src: desktopImageGrid_2_WEBP,
+                      srcDensity: desktopImageGrid_2_2xWEBP,
+                    },
+                    {
+                      device: 'mobile',
+                      type: 'image/webp',
+                      src: mobileImageGrid_2_WEBP,
+                      srcDensity: mobileImageGrid_2_2xWEBP,
+                    },
+                  ]}
+                />
+              </Reveal.Child>
 
-            <Image
-              srcFallback={mobileImageGrid_3_JPG}
-              alt="Art gallery image 3"
-              srcSet={[
-                {
-                  device: 'tablet',
-                  type: 'image/webp',
-                  src: desktopImageGrid_3_WEBP,
-                  srcDensity: desktopImageGrid_3_2xWEBP,
-                },
-                {
-                  device: 'mobile',
-                  type: 'image/webp',
-                  src: mobileImageGrid_3_WEBP,
-                  srcDensity: mobileImageGrid_3_2xWEBP,
-                },
-              ]}
-            />
+              <Reveal.Child>
+                <Image
+                  srcFallback={mobileImageGrid_3_JPG}
+                  alt="Art gallery image 3"
+                  srcSet={[
+                    {
+                      device: 'tablet',
+                      type: 'image/webp',
+                      src: desktopImageGrid_3_WEBP,
+                      srcDensity: desktopImageGrid_3_2xWEBP,
+                    },
+                    {
+                      device: 'mobile',
+                      type: 'image/webp',
+                      src: mobileImageGrid_3_WEBP,
+                      srcDensity: mobileImageGrid_3_2xWEBP,
+                    },
+                  ]}
+                />
+              </Reveal.Child>
 
-            <Styles.Article $black={true}>
-              <Heading as="h3" size="md" transform="uppercase">
-                Come &amp; be inspired
-              </Heading>
+              <Reveal.Child>
+                <Styles.Article $black={true}>
+                  <Heading as="h3" size="md" transform="uppercase">
+                    Come &amp; be inspired
+                  </Heading>
 
-              <Paragraph size="base">
-                We’re excited to welcome you to our gallery and see how our collections influence
-                you.
-              </Paragraph>
-            </Styles.Article>
-          </Styles.Grid>
-        </Section.Wrapper>
+                  <Paragraph size="base">
+                    We’re excited to welcome you to our gallery and see how our collections
+                    influence you.
+                  </Paragraph>
+                </Styles.Article>
+              </Reveal.Child>
+            </Styles.Grid>
+          </Section.Wrapper>
+        </Reveal>
       </Section.Container>
     </Section>
   );
