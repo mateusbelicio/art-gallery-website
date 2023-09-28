@@ -6,9 +6,9 @@
 This is a solution to the [Art gallery website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/art-gallery-website-yVdrZlxyA). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 <!-- ![My Profile](https://img.shields.io/badge/Status-building-blue?style=flat) -->
-<!-- ![My Profile](https://img.shields.io/badge/Status-finished-green?style=flat) -->
+<!-- ![My Profile](https://img.shields.io/badge/Status-improving-yellow?style=flat) -->
 
-![My Profile](https://img.shields.io/badge/Status-improving-yellow?style=flat)
+![My Profile](https://img.shields.io/badge/Status-finished-green?style=flat)
 &dot;
 [![Status](https://img.shields.io/website?label=Website&down_color=inactive&down_message=offline&up_color=green&up_message=online&url=https%3A%2F%2Fmateusbelicio.github.io/art-gallery-website/)](https://mateusbelicio.github.io/art-gallery-website/)
 &dot;
