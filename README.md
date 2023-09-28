@@ -34,6 +34,7 @@ Users should be able to:
 - [React](https://reactjs.org/) - JS library
 - [Styled Components](https://styled-components.com/) - For styles
 - [Framer Motion](https://www.framer.com/motion/) - For animations
+- [Mapbox](https://www.mapbox.com/) - For the the interactive map
 
 ---
 
