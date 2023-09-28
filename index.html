@@ -10,6 +10,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Outfit:wght@300&display=swap" rel="stylesheet">
   
   <title>Frontend Mentor | Art gallery website</title>
+
+  <script type="text/javascript">
+    (function (currentLocation) {
+      if (currentLocation.search[1] === '/') {
+        const decoded = currentLocation.search
+          .slice(1)
+          .split('&')
+          .map((s) => {
+            return s.replace(/~and~/g, '&');
+          })
+          .join('?');
+        window.history.replaceState(
+          null,
+          '',
+          currentLocation.pathname.slice(0, -1) + decoded + currentLocation.hash
+        );
+      }
+    })(window.location);
+  </script>
 </head>
 <body>
   <div id="root"></div>
