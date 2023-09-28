@@ -12,9 +12,9 @@
   <title>Frontend Mentor | Art gallery website</title>
 
   <script type="text/javascript">
-    (function (location) {
-      if (location.search[1] === '/') {
-        const decoded = location.search
+    (function (currentLocation) {
+      if (currentLocation.search[1] === '/') {
+        const decoded = currentLocation.search
           .slice(1)
           .split('&')
           .map((s) => {
@@ -24,7 +24,7 @@
         window.history.replaceState(
           null,
           '',
-          location.pathname.slice(0, -1) + decoded + location.hash
+          currentLocation.pathname.slice(0, -1) + decoded + currentLocation.hash
         );
       }
     })(window.location);

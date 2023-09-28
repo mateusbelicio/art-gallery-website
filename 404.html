@@ -10,10 +10,10 @@
   <script>
     const pathSegmentsToKeep = 1;
 
-    const location = window.location;
-    const { origin, pathname, search, hash } = location;
+    const currentLocation = window.location;
+    const { origin, pathname, search, hash } = currentLocation;
 
-    location.replace(`${origin}${pathname
+    currentLocation.replace(`${origin}${pathname
       .split('/')
       .slice(0, 1 + pathSegmentsToKeep)
       .join('/')}/?/${pathname
